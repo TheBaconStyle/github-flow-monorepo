@@ -8,13 +8,20 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YWViNTA2MDItOWI2Ny00ZDRhLWE5ZDAtOTU1ODlkMDhjNzljfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDefaults": {
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+    }
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
       }
     }
   }
